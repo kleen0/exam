@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet">
+<title>Фотогалерея</title>
+<style>
+a {
+text-decoration:none;
+}
+body {
+  margin:0px;
+  height: 100vh;
+  background-color:rgba(215, 116, 128, 0.2549019607843137);
+  background-image:none;
+  position:relative;
+  left:-0px;
+  width:1200px;
+  margin-left:auto;
+  margin-right:auto;
+  display: grid;
+  place-items: center;
+  text-align:left;
+}
+
+.gallery {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 25s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+  
+  to {
+    transform: perspective(1200px) rotateY(360deg);
+  }
+}
+
+.gallery span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+}
+
+.gallery span img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotateY(calc(var(--i) * 72deg)) translateZ(200px);
+}
+#u10 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  height:0px;
+}
+#u11_div {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:92px;
+  height:45px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:"Cooper Black", "Cooper", sans-serif;
+  font-weight:900;
+  font-style:normal;
+  font-size:36px;
+  color:#333333;
+}
+#u11 {
+  border-width:0px;
+  position:absolute;
+  left:15px;
+  top:8px;
+  width:92px;
+  height:45px;
+  display:flex;
+  font-family:"Cooper Black", "Cooper", sans-serif;
+  font-weight:900;
+  font-style:normal;
+  font-size:36px;
+  color:#333333;
+}
+#u11 .text {
+  position:absolute;
+  align-self:center;
+  padding:2px 2px 2px 2px;
+  box-sizing:border-box;
+  width:100%;
+}
+#u11_text {
+  border-width:0px;
+  white-space:nowrap;
+  text-transform:none;
+}
+#u12_div {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:100px;
+  height:32px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:"Lora", sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:11px;
+  color:#333333;
+}
+#u12 {
+  border-width:0px;
+  position:absolute;
+  left:82px;
+  top:15px;
+  width:100px;
+  height:32px;
+  display:flex;
+  font-family:"Lora", sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:11px;
+  color:#333333;
+}
+#u12 .text {
+  position:absolute;
+  align-self:center;
+  padding:2px 2px 2px 2px;
+  box-sizing:border-box;
+  width:100%;
+}
+#u12_text {
+  border-width:0px;
+  white-space:nowrap;
+  text-transform:none;
+}
+#u13_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:2px;
+  height:31px;
+}
+#u13 {
+  border-width:0px;
+  position:absolute;
+  left:111px;
+  top:16px;
+  width:1px;
+  height:30px;
+  display:flex;
+  -webkit-transform:rotate(-0.3676126856265902deg);
+  -moz-transform:rotate(-0.3676126856265902deg);
+  -ms-transform:rotate(-0.3676126856265902deg);
+  transform:rotate(-0.3676126856265902deg);
+  font-family:"Arial Полужирный", "Arial Обычный", "Arial", sans-serif;
+  font-weight:700;
+  font-style:normal;
+}
+#u13 .text {
+  position:absolute;
+  align-self:center;
+  padding:2px 2px 2px 2px;
+  box-sizing:border-box;
+  width:100%;
+}
+#u13_text {
+  border-width:0px;
+  word-wrap:break-word;
+  text-transform:none;
+  visibility:hidden;
+}
+table {
+    border: 2px solid white;
+    color: #797979;
+    font-family: 'Comic Sans MS', cursive; /* Применяем шрифт Comic Sans */
+    margin-top: 20px; /* Отступ сверху */
+  }
+
+  th, td {
+    border: 2px solid white;
+    padding: 8px; /* Добавляем отступ внутри ячеек */
+  }
+
+  h2 {
+    margin-top: 90px; /* Уменьшаем отступ заголовка сверху */
+    color: #797979; /* Устанавливаем цвет для заголовка */
+    font-family: 'Comic Sans MS', cursive; /* Применяем шрифт Comic Sans */
+  }
+</style>
+</head>
+<body>
+
+<!-- Unnamed (логотип) -->
+
+        <!-- Unnamed (Group) -->
+        <div id="u10" class="ax_default" data-left="15" data-top="8" data-width="167" data-height="45">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u11" class="ax_default link_button">
+            <div id="u11_div" class=""></div>
+            <div id="u11_text" class="text ">
+              <p><a href="index.html"><span>NUR</span></a></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u12" class="ax_default link_button">
+            <div id="u12_div" class=""></div>
+            <div id="u12_text" class="text ">
+              <p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;центр </span></p><p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; психологии</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Vertical Line) -->
+          <div id="u13" class="ax_default line">
+            <img id="u13_img" class="img " src="images/phycholog/u13.svg" alt="вертикальная линия">
+            <div id="u13_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div id="u9" style="display:none; visibility:hidden;"></div>
+      </div>
+      
+      <div style="position: absolute; top: 80px; width: 100%; text-align: center; color:#797979; font-size: 50px; font-family: 'Comic Sans MS', cursive; font-weight: bold;">NUR -</div>
+      <div style="position: absolute; top: 140px; width: 100%; text-align: center; color:#797979; font-size: 35px; font-family: 'Comic Sans MS', cursive;">поддержка на расстоянии</div>
+
+<div class="gallery" style="margin-top: 240px;"> <!-- Добавляем отступ сверху -->
+  <span style="--i:1">
+    <img src="images/photo1.jpg" alt="photo1" />
+  </span>
+  <span style="--i:2">
+    <img src="images/photo2.jpg" alt="photo2" />
+  </span>
+  <span style="--i:3">
+    <img src="images/photo3.jpg" alt="photo3" />
+  </span>
+  <span style="--i:4">
+    <img src="images/photo4.jpg" alt="photo4" />
+  </span>
+  <span style="--i:5">
+    <img src="images/photo5.jpg" alt="photo5" />
+  </span>
+</div>
+
+<div style="position: absolute; top: 470px; width: 100%; text-align: center; color:#797979; font-size: 20px; font-family: 'Comic Sans MS', cursive;">мы всегда готовы вам помочь</div>
+
+<!-- Таблица сравнения типов услуг -->
+<h2>Сравнение типов услуг</h2>
+<table>
+  <tr>
+    <th>Тип услуги</th>
+    <th>Описание</th>
+  </tr>
+  <tr>
+    <td>Онлайн-консультация</td>
+    <td>Индивидуальное консультирование через видеозвонок или чат</td>
+  </tr>
+  <tr>
+    <td>Групповая терапия</td>
+    <td>Онлайн-групповые сессии с участием психолога и других участников</td>
+  </tr>
+  <tr>
+    <td>Психологические курсы</td>
+    <td>Онлайн-курсы по управлению стрессом, повышению самооценки и другим темам</td>
+  </tr>
+  <tr>
+    <td>Электронные ресурсы</td>
+    <td>Доступ к онлайн-статьям, аудиозаписям и другим ресурсам для самостоятельной работы</td>
+  </tr>
+</table>
+
+<!-- Таблица сравнения специализаций психологов -->
+<h2>Сравнение специализаций психологов</h2>
+<table>
+  <tr>
+    <th>Специализация</th>
+    <th>Описание</th>
+  </tr>
+  <tr>
+    <td>Клиническая психология</td>
+    <td>Изучение и лечение психических расстройств и проблем поведения</td>
+  </tr>
+  <tr>
+    <td>Педагогическая психология</td>
+    <td>Психологическое сопровождение образовательного процесса</td>
+  </tr>
+  <tr>
+    <td>Социальная психология</td>
+    <td>Изучение взаимодействия и влияния социальной среды на человеческое поведение</td>
+  </tr>
+  <tr>
+    <td>Организационная психология</td>
+    <td>Психологическое сопровождение в рабочей среде и в организациях</td>
+  </tr>
+</table>
+
+</body>
+</html>
