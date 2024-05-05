@@ -1,0 +1,156 @@
+﻿.ax_default {
+  font-family:"Arial Обычный", "Arial", sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  letter-spacing:normal;
+  color:#333333;
+  vertical-align:none;
+  text-align:center;
+  line-height:normal;
+  text-transform:none;
+}
+body {
+    background-image: url("svgmask.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.box_1 {
+}
+.box_2 {
+}
+.ellipse {
+}
+.image {
+}
+.button {
+}
+.primary_button {
+  color:#FFFFFF;
+}
+.link_button {
+  color:#1E98D7;
+}
+.heading_1 {
+  font-family:"Arial Обычный", "Arial", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  font-size:32px;
+  text-align:left;
+}
+.heading_2 {
+  font-family:"Arial Обычный", "Arial", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  font-size:24px;
+  text-align:left;
+}
+.heading_3 {
+  font-family:"Arial Обычный", "Arial", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  font-size:18px;
+  text-align:left;
+}
+.heading_4 {
+  font-family:"Arial Обычный", "Arial", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  font-size:14px;
+  text-align:left;
+}
+.heading_5 {
+  font-family:"Arial Обычный", "Arial", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  text-align:left;
+}
+.heading_6 {
+  font-family:"Arial Обычный", "Arial", sans-serif;
+  font-weight:bold;
+  font-style:normal;
+  font-size:10px;
+  text-align:left;
+}
+.label {
+  font-size:13px;
+  text-align:left;
+}
+.paragraph {
+  text-align:left;
+}
+.link_button1 {
+  color:#169BD5;
+}
+.text_link {
+  color:#0000FF;
+}
+.text_link_mouse_over {
+}
+.line {
+}
+.text_link_mouse_down {
+}
+.text_field {
+  color:#000000;
+  text-align:left;
+}
+.text_area {
+  color:#000000;
+  text-align:left;
+}
+.radio_button {
+  text-align:left;
+}
+.droplist {
+  color:#000000;
+  text-align:left;
+}
+.list_box {
+  color:#000000;
+  text-align:left;
+}
+.checkbox {
+  text-align:left;
+}
+.radio_button1 {
+  text-align:left;
+}
+.tree_node {
+  text-align:left;
+}
+.sticky_4 {
+  text-align:left;
+}
+.form_hint {
+  color:#999999;
+}
+.shape {
+}
+.box_3 {
+}
+.form_disabled {
+}
+.primary_button1 {
+  color:#FFFFFF;
+}
+.icon {
+}
+.image1 {
+}
+.line1 {
+}
+.flow_shape {
+}
+.label1 {
+  font-size:14px;
+  text-align:left;
+}
+.checkbox1 {
+  text-align:left;
+}
+.placeholder {
+}
+.flow_shape1 {
+}
+textarea, select, input, button { outline: none; }
