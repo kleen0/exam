@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Интерактивная карта Кубы</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+	body {
+    background-color:rgba(215, 116, 128, 0.2549019607843137);
+    }
+    /* Стили для карты */
+    #map {
+        position: relative;
+    }
+    /* Стили для областей */
+    .region {
+        position: absolute;
+        cursor: pointer;
+        border: 1px solid transparent;
+    }
+    /* Стили для всплывающего блока */
+    .info-box {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+	.region:hover {
+    background-color: rgba(255, 255, 255, 0);
+	}
+	h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+	color: darkred;
+    }
+</style>
+</head>
+<body>
+
+<div id="map">
+    <img src="images/map.png" alt="Карта Кубы" style="width: 800px; height: auto;">
+    <div class="region" id="havana" style="top: 95px; left: 196px; width: 20px; height: 40px;"></div>
+    <div class="region" id="pinar-del-rio" style="top: 150px; left: 70px; width: 80px; height: 40px;"></div>
+    <div class="region" id="matanzas" style="top: 120px; left: 245px; width: 50px; height: 70px;"></div>
+	<div class="region" id="mayabeque" style="top: 115px; left: 205px; width: 40px; height: 43px;"></div>
+	<div class="region" id="artemisa" style="top: 120px; left: 166px; width: 25px; height: 30px;"></div>
+	<div class="region" id="villa-clara" style="top: 110px; left: 335px; width: 50px; height: 60px;"></div>
+	<div class="region" id="cienfuegos" style="top: 165px; left: 310px; width: 40px; height: 40px;"></div>
+	<div class="region" id="sancti-spiritus" style="top: 190px; left: 370px; width: 45px; height: 45px;"></div>
+	<div class="region" id="ciego-de-avila" style="top: 175px; left: 430px; width: 45px; height: 55px;"></div>
+	<div class="region" id="camaguey" style="top: 230px; left: 480px; width: 60px; height: 50px;"></div>
+	<div class="region" id="las-tunas" style="top: 270px; left: 540px; width: 40px; height: 30px;"></div>
+	<div class="region" id="holguin" style="top: 270px; left: 620px; width: 40px; height: 40px;"></div>
+	<div class="region" id="granma" style="top: 310px; left: 560px; width: 55px; height: 50px;"></div>
+	<div class="region" id="santiago-de-cuba" style="top: 320px; left: 635px; width: 50px; height: 40px;"></div>
+	<div class="region" id="guanta" style="top: 320px; left: 695px; width: 60px; height: 40px;"></div>
+	<div class="region" id="isla-de-la-juventud" style="top: 210px; left: 145px; width: 40px; height: 40px;"></div>
+</div>
+
+<div class="info-box" id="info-havana" style="top: 220px; left: 280px;">
+    <h3>Гавана (La Habana)</h3>
+    <p>Название главного города: Гавана (La Habana)</p>
+    <p>Название местности: Прибрежные районы</p>
+    <p>Количество сайтов психологической помощи в данной области: 25</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 7:00-22:00</p>
+</div>
+
+<div class="info-box" id="info-pinar-del-rio" style="top: 200px; left: 120px;">
+    <h3>Пинар-дель-Рио</h3>
+    <p>Название главного города: Пинар-дель-Рио</p>
+    <p>Название местности: Горные районы</p>
+    <p>Количество сайтов психологической помощи в данной области: 15</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Вс: 8:00-20:00</p>
+</div>
+
+<div class="info-box" id="info-matanzas" style="top: 270px; left: 420px;">
+    <h3>Матансас (Matanzas)</h3>
+    <p>Название главного города: Карденас</p>
+    <p>Название местности: Побережье Верхнего Кубы</p>
+    <p>Количество сайтов психологической помощи в данной области: 20</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 6:00-23:00</p>
+</div>
+
+<div class="info-box" id="info-mayabeque" style="top: 200px; left: 220px;">
+    <h3>Маябеке (Mayabeque)</h3>
+    <p>Название главного города: Сал-Хосе-де-лас-Лахас</p>
+    <p>Название местности: Побережье</p>
+    <p>Количество сайтов психологической помощи в данной области: 18</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 7:00-21:00</p>
+</div>
+
+<div class="info-box" id="info-artemisa" style="top: 210px; left: 220px;">
+    <h3>Артемиса (Artemisa)</h3>
+    <p>Название главного города: Артемиса (Artemisa)</p>
+    <p>Название местности: Побережье</p>
+    <p>Количество сайтов психологической помощи в данной области: 25</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 8:00-19:00</p>
+</div>
+
+<div class="info-box" id="info-villa-clara" style="top: 250px; left: 300px;">
+    <h3>Вилья-Клара (Villa-clara)</h3>
+    <p>Название главного города: Санта-Клара</p>
+    <p>Название местности: Центральная часть</p>
+    <p>Количество сайтов психологической помощи в данной области: 25</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 6:00-23:00</p>
+</div>
+
+<div class="info-box" id="info-cienfuegos" style="top: 250px; left: 300px;">
+    <h3>Сьенфуэгос (Cienfuegos)</h3>
+    <p>Название главного города: Сьенфуэгос</p>
+    <p>Название местности: Прибрежные районы</p>
+    <p>Количество сайтов психологической помощи в данной области: 25</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 7:00-23:00</p>
+</div>
+
+<div class="info-box" id="info-sancti-spiritus" style="top: 270px; left: 420px;">
+    <h3>Санкти-Спиритус (Sancti-spiritus)</h3>
+    <p>Название главного города: Санкти-Спиритус</p>
+    <p>Название местности: Сельская местность</p>
+    <p>Количество сайтов психологической помощи в данной области: 20</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Сб: 6:30-23:00</p>
+</div>
+
+<div class="info-box" id="info-ciego-de-avila" style="top: 270px; left: 420px;">
+    <h3>Сьего-де-Авило (Ciego-de-avila)</h3>
+    <p>Название главного города: Сьего-де-Авило</p>
+    <p>Название местности: Центральная часть</p>
+    <p>Количество сайтов психологической помощи в данной области: 22</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 6:00-21:00</p>
+</div>
+
+<div class="info-box" id="info-camaguey" style="top: 340px; left: 460px;">
+    <h3>Камагуэй (Camaguey)</h3>
+    <p>Название главного города: Камагуэй</p>
+    <p>Название местности: Сельская местность</p>
+    <p>Количество сайтов психологической помощи в данной области: 21</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Вс: 6:30-22:00</p>
+</div>
+
+<div class="info-box" id="info-las-tunas" style="top: 350px; left: 470px;">
+    <h3>Лас-Тунас (Las-tunas)</h3>
+    <p>Название главного города: Лас-Тунас</p>
+    <p>Название местности: Сельская местность</p>
+    <p>Количество сайтов психологической помощи в данной области: 20</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 6:00-23:00</p>
+</div>
+
+<div class="info-box" id="info-holguin" style="top: 370px; left: 560px;">
+    <h3>Ольгин (Holguin)</h3>
+    <p>Название главного города: Ольгин</p>
+    <p>Название местности: Побережье</p>
+    <p>Количество сайтов психологической помощи в данной области: 20</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 6:00-22:00</p>
+</div>
+
+<div class="info-box" id="info-granma" style="top: 390px; left: 540px;">
+    <h3>Гранма (Granma)</h3>
+    <p>Название главного города: Баямо</p>
+    <p>Название местности: Побережье</p>
+    <p>Количество сайтов психологической помощи в данной области: 10</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 6:00-21:00</p>
+</div>
+
+<div class="info-box" id="info-santiago-de-cuba" style="top: 390px; left: 550px;">
+    <h3>Сантьяго-де-Куба (Santiago-de-cuba)</h3>
+    <p>Название главного города: Сантьяго-де-Куба</p>
+    <p>Название местности: Побережье</p>
+    <p>Количество сайтов психологической помощи в данной области: 15</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Пт: 6:00-23:00</p>
+</div>
+
+<div class="info-box" id="info-guanta" style="top: 395px; left: 550px;">
+    <h3>Гуантанамо (Guanta)</h3>
+    <p>Название главного города: Гуантанамо</p>
+    <p>Название местности: Прибрежные районы</p>
+    <p>Количество сайтов психологической помощи в данной области: 25</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Сб: 5:30-23:30</p>
+</div>
+
+<div class="info-box" id="info-isla-de-la-juventud" style="top: 290px; left: 120px;">
+    <h3>Нуэва Херона (Isla-de-la-juventud)</h3>
+    <p>Название главного города: Нуэва Херона</p>
+    <p>Название местности: Побережье</p>
+    <p>Количество сайтов психологической помощи в данной области: 20</p>
+    <p>Номер телефона: 87056249118</p>
+    <p>График работы: Пн-Сб: 8:00-17:00</p>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // Показываем всплывающий блок при наведении на область
+        $(".region").hover(function() {
+            var regionId = $(this).attr("id");
+            $("#info-" + regionId).show();
+        }, function() {
+            $(".info-box").hide();
+        });
+    });
+</script>
+
+</body>
+</html>
